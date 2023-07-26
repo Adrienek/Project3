@@ -44,7 +44,7 @@ function all_weather_plot(city) {
       };
 
       let layout = {
-        title: `Weather Trends for ${city}`,
+        title: `Weather Trends for ${city} 2022`,
         xaxis: {
           title: 'Date',
         },
@@ -53,9 +53,8 @@ function all_weather_plot(city) {
         },
       };
 
-      Plotly.newPlot('bar', trace, layout);
-      Plotly.newPlot('bar1', trace2, layout);
-      Plotly.newPlot('bar2', trace3, layout);
+      let data = [trace, trace2, trace3];
+      Plotly.newPlot('bar', data, layout);
 
       // Call the function to calculate averages and populate the averages table
       calculateAndDisplayAverages(apiData);
